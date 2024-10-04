@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="create_join.css">
+</head>
+<body>
+    <header>
+        <h1>
+            VirtuaLearn
+        </h1>
+    </header>
+    <main>
+        <div>
+            
+        </div>
+        <div class="display" id="display">
+        <!--display div after create-->
+        </div>
+        
+            
+           
+    </main>
+    <footer> 
+        <div id="create_join" class="create_join">
+        <div class="create_form" id="create_form">
+                    <label for="group_name">group-name:</label>
+                    <input type="text" id="group_name" placeholder="enter your group name" required>
+                    <label for="leader_name">leader-name:</label>
+                    <input type="text" id="leader_name" placeholder="enter your name" required>
+                    <button id="create">create</button>
+        </div>
+        <div class="join_form" id="join_form">
+                    <label for="join_group">Group name</label>
+                    <input type="text" id="join_group" placeholder="Enter group name" required>
+                    <label for="join_code">join code</label>
+                    <input type="number" id="join_code" placeholder="Enter group code" required>
+                    <button id="join">join</button>
+        </div>
+        </div>
+            <div class="footer_icon-button_creat_join">
+                    <button id="circle-button">
+                            +
+                    </button>
+                </a>
+            </div>
+           
+    </footer>
+    <script>
+        /*for display text and div*/
+        const input1=document.getElementById('group_name')
+        const input2=document.getElementById('leader_name')
+        const button=document.getElementById('create')
+        const display=document.getElementById('display')
+        button.addEventListener('click',()=>{
+            display.innerHTML=`
+            <div class="display_div">
+            <a href="homepage.html">
+            <button>
+            <h1>${input1.value}</h1>
+            <p>${input2.value}</p>
+            </button>
+            </a>
+            </div>
+            `
+        });
+        
+        /*button creat join*/
+        const circle_button = document.getElementById('circle-button');
+        const hiddenDiv = document.getElementById('create_join');
+
+        circle_button.addEventListener('click', () => {
+      if (circle_button.classList.contains('rotated')) {
+        circle_button.classList.remove('rotated');
+        hiddenDiv.classList.remove('show');
+    } else {
+        circle_button.classList.add('rotated');
+        hiddenDiv.classList.add('show');
+    }
+    });
+    </script>
+</body>
+</html>

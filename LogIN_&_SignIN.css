@@ -1,0 +1,363 @@
+@import url(
+"https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 96vh;
+    width: 98vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    background-color: rgba(238, 238, 238, 0.753);
+}
+/*main container*/
+
+header {
+    top: 0;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.heading_div{
+    height: 39px;
+    width: 196px;
+    overflow: hidden;
+    border-bottom: 1px solid orange;
+}
+.heading {
+    color: orange;
+    position: relative;
+    animation: heading 2s linear 0s 1;
+}
+@keyframes heading{
+    0%{
+        top: 32px;
+    }
+    100%{
+        top: 0px;
+    }
+}
+main{
+    height: inherit;
+    top: 50px;
+    position: absolute;
+}
+.landingpage{
+    display: inline-block;
+    padding: 50px;
+    height: 90vh;
+    width: 99vw;
+    text-align: center;
+    font-weight: bold;
+}
+.landingpage button{
+    height: 30px;
+    width: 50px;
+    background: linear-gradient(to right,
+    rgb(255, 195, 110),
+    rgb(255, 146, 91));
+    color: white;
+    border: none;
+    border-radius: 30px;
+}
+.landingpage button:hover{
+    border: 2px solid black;
+}
+.landingpage button a{
+    color: white;
+    text-decoration: none;
+}
+
+/*login sign in container*/
+.login_signin_container{
+    display: flex;
+    align-items: center;
+    width: 99vw;
+    height: 100%;
+}
+.login_signin_container:target{
+    transition: 1s ease-in-out linear;
+}
+/*text and button contauner*/
+.text_button_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 65%;
+    width: 752px;
+    text-align: center;
+    padding: 10px;
+    background: transparent;
+    z-index: 1;
+}
+.text{
+    padding: 0px 90px;
+    height: 60%;
+    color: rgb(15, 15, 15);
+}
+h2{
+    font-weight: bold; 
+    text-decoration: underline;   
+}
+p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/*Log-in & Sing-in button container*/
+.button_container{
+    height: 60px;
+    width: 300px;
+}
+.btn {
+    height: 60px;
+    width: 300px;
+    box-shadow: 10px 10px 30px rgb(254, 215, 188);
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.login,
+.signin {
+    font-size: 22px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.slider {
+    height: 60px;
+    width: 150px;
+    border-radius: 50px;
+    background-image: linear-gradient(to right,
+            rgb(255, 195, 110),
+            rgb(255, 146, 91));
+    position: absolute;
+    left: 226.5px;
+    transition: all 0.5s ease-in-out;
+}
+.moveslider {
+    left: 376.5px;
+}
+
+.title {
+    font-weight: 400;
+    letter-spacing: 1.5px;
+}
+/*form container*/
+.form-container{
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-wrap: nowrap;
+    border-left: 1px solid rgba(5, 5, 5, 0.753);
+    height: 445px;
+    width: 435px;
+    background-color: transparent;
+    overflow: hidden;
+    left:750px;
+}
+#Log-in_form{
+    margin-right: 40px;
+}
+#Sign-in_form{
+    margin-left: 40px;
+}
+.form-section {
+    height: 500px;
+    width: inherit;
+    padding: 20px 0;
+    display: flex;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    left: -610px;
+    z-index: 0;
+}
+
+.form-section-move {
+    left: -34px;
+    z-index: 0;
+}
+
+.login-box,
+.signin-box {
+    height: 100%;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 40px;
+}
+
+.login-box {
+    gap: 50px;
+}
+
+.signin-box {
+    gap: 30px;
+}
+/*input and button*/
+input{
+    height: 30px;
+    width: 370px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgba(22, 22, 22, 0.747);
+    background: transparent;
+    color: rgb(0, 0, 0);
+    padding-left: 30px;
+    font-size: 18px;
+}
+
+.clkbtn {
+    height: 60px;
+    width: 150px;
+    border-radius: 50px;
+    background-image: linear-gradient(to right,
+            rgb(255, 195, 110),
+            rgb(255, 146, 91));
+    font-size: 22px;
+    border: none;
+    cursor: pointer;
+}
+/* For Responsiveness of the page */
+
+@media screen and (max-width: 650px) {
+    .login_signin_container{
+        height: 600px;
+        width: 300px;
+    }
+
+    .title {
+        font-size: 15px;
+    }
+
+    .btn {
+        height: 50px;
+        width: 200px;
+        margin: 20px auto;
+    }
+
+    .login,
+    .signin {
+        font-size: 19px;
+    }
+
+    .slider {
+        height: 50px;
+        width: 100px;
+        left: 50px;
+    }
+
+    .moveslider {
+        left: 150px;
+    }
+
+    .form-section {
+        height: 500px;
+        width: 600px;
+    }
+
+    .form-section-move {
+        left: -300px;
+    }
+
+    .login-box,
+    .signin-box {
+        height: 100%;
+        width: 300px;
+    }
+
+    .ele {
+        height: 50px;
+        width: 250px;
+        font-size: 15px;
+    }
+
+    .clkbtn {
+        height: 50px;
+        width: 130px;
+        font-size: 19px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .container {
+        height: 600px;
+        width: 250px;
+    }
+
+    .heading {
+        font-size: 30px;
+    }
+
+    .title {
+        font-size: 10px;
+    }
+
+    .btn {
+        height: 50px;
+        width: 200px;
+        margin: 20px auto;
+    }
+
+    .login,
+    .signin {
+        font-size: 19px;
+    }
+
+    .slider {
+        height: 50px;
+        width: 100px;
+        left: 27px;
+    }
+
+    .moveslider {
+        left: 127px;
+    }
+
+    .form-section {
+        height: 500px;
+        width: 500px;
+    }
+
+    .form-section-move {
+        left: -250px;
+    }
+
+    .login-box,
+    .signin-box {
+        height: 100%;
+        width: 250px;
+    }
+
+    .ele {
+        height: 50px;
+        width: 220px;
+        font-size: 15px;
+    }
+
+    .clkbtn {
+        height: 50px;
+        width: 130px;
+        font-size: 19px;
+    }
+}

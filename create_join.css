@@ -1,0 +1,147 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background-color: rgba(255, 255, 255, 0.753);
+}
+header{
+    color: orange;
+    text-align: center;
+}
+/*main*/
+main{
+   background: transparent;
+   padding: 10px;
+   height: inherit;
+   margin-bottom: 50px;
+   display: grid;
+}
+.display{
+	display: inline-block;
+	position: relative;
+    border: 2px solid red;
+	height: inherit;
+	width: 65%;
+	left: 30%;
+}
+/*footer*/
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background:linear-gradient(rgba(255, 255, 255, 0),rgba(164, 164, 164, 0.5));    
+    color: #111111;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: inherit;
+}
+/*footer icon*/
+/*circle button*/
+#circle-button {
+
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: #e89003;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	outline: none;
+	font-size: 30px;
+}
+
+#circle-button {
+	font-size: 24px;
+	line-height: 40px;
+	text-align: center;
+}
+#circle-button.rotated {
+  transform: rotate(45deg);
+}
+.create_join{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: rgba(58, 58, 58, 0.5);
+	padding: 10px;
+	border: 1px solid #ddd;
+	display: none;
+}
+.create_join.show {
+
+	backdrop-filter: blur(5px);
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: stretch;
+	height: 385px;
+	width: 665px;
+	animation: slide-up 1.5s forwards;
+}
+.create_join input{
+	margin: 10px 5px;
+	width: 250px;
+	height: 35px;
+	background: #d4d4d4b0;
+	border: none;
+	border-radius: 20px;
+	text-align: center;
+	color: #0e0e0e;
+}
+.create_join input::placeholder{
+	color: rgb(15, 15, 15);
+}
+.create_join button{
+	margin: 20px 5px;
+	height: 35px;
+	width: 250px;
+	background: linear-gradient(to right,
+	rgb(255, 195, 110),
+	rgb(255, 146, 91));
+	border: none;
+	border-radius: 30px;
+}
+.create_join div{
+	height: 100%;
+	width: 45%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.display_div{
+	display: inline-block;
+	width: 100%;
+	margin: 10px 0px;
+}
+.display_div button{
+	border: 0.5px solid black;
+	border-radius: 15px;
+	cursor: pointer;
+	height: 135px;
+	width: 100%;
+	background: #82828296;
+}
+.display_div button h1{
+	margin: -11px 24px;
+	font-size: 28px;
+	text-align: start;
+}
+.display_div button p{
+	margin: 19px 25px;
+	font-size: 14px;
+	text-align: start;
+}
+@keyframes slide-up {
+	0% {
+		transform: translateX(-50%) translateY(300px);
+	}
+	100% {
+		transform: translateX(-50%) translateY(0);
+	}
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="chat.css">
+    <link rel="stylesheet" href="user_list.css">
+    <link rel="stylesheet" href="zoom.css">
+    <link rel="stylesheet" href="pdf.css">
+</head>
+<body>
+    <header>
+        <h1>VirtuaLearn</h1>
+    </header>
+   <div class="main_nav">
+    <nav>
+            <ul>
+                <li>
+                    <abbr title="send message in group">
+                    <a href="#group_main">
+                        <button class="group" id="defaultopen">group</button>
+                    </a>
+                    </abbr>
+                </li>
+                <li>
+                    <abbr title="show pdf">
+                    <a href="#pdf_main">
+                        <button class="pdf">pdf</button>
+                    </a>
+                    </abbr>
+                </li>
+                <li>
+                    <abbr title="chat with group members">
+                    <a href="#chat_main">
+                        <button class="chat">chat</button>
+                    </a>
+                    </abbr>
+                </li>
+                <li>
+                    <abbr title="zoom meeting">
+                    <a href="#zoom_main">
+                        <button class="zoom">zoom</button>
+                    </a>
+                    </abbr>
+                </li>
+                <li>
+                    <abbr title="list of user">
+                    <a href="#user_list_main">
+                        <button class="user_list">user</button>
+                    </a>
+                </abbr>
+                </li>
+                
+            </ul>
+            <div class="slider">
+
+            </div>
+    </nav>
+    <main>
+        <article class="group_main" id="group_main">
+            <!--group-->
+            group Lorem, ipsum dolor.
+        </article>
+        <article class="pdf_main" id="pdf_main">
+            <!--pdf-->
+            <section class="pdf_container_pdf">
+                <input type="file">
+                <button class="add_pdf">add PDF</button>
+            </section>
+        </article>
+        <article class="chat_main" id="chat_main">
+            <!--chat-->      
+                <section class="main_userlist_chat">
+        <input id="username_input_chat" type="search" list="user_datalist_chat" placeholder="Enter username">
+        <div class="user_list_container_chat">
+            <datalist id="user_datalist_chat">
+                <option value="Rudra"></option>
+                <option value="Ved"></option>
+                <option value="Abhi"></option>
+                <option value="Akshar"></option>
+            </datalist>
+        </div>
+                </section>
+                <section class="chating_container_chat">
+                    <div class="show_container_chat" id="show_container_chat">
+                    </div>
+                    <div class="input_send_container_chat">
+                        <input class="input_chat" id="input_chat" rows="33" cols="33" type="text" aria-placeholder="Enter message..."></div>
+                        <button class="send_chat" id="send_chat">
+                            <img src="sendbutton.png" alt="">
+                            <abbr title="send"></abbr>
+                        </button>
+                </section>       
+        </article>
+        <article class="zoom_main" id="zoom_main">
+            <!--zoom meeting-->
+            <a href="zoom.com">
+                <button>host meeting</button>
+            </a>
+        </article>
+        <article class="user_list_main" id="user_list_main">
+            <!--list of user-->
+            <section class="user_list_container_list" id="user_list_container_list">
+                <div>rudra</div>
+                <div>ved</div>
+                <div>abhi</div>
+                <div>Akshar</div>
+            </section>
+        </article>
+        
+    </main>
+    </div>
+    <footer>
+
+    </footer>
+    <script>
+        /*let slider*/
+let group = document.querySelector(".group");
+let pdf = document.querySelector(".pdf");
+let chat = document.querySelector(".chat");
+let user_list = document.querySelector(".user_list");
+let zoom = document.querySelector(".zoom");
+/*let main*/
+let group_main= document.querySelector(".group_main")
+/*slider*/
+
+let slider = document.querySelector(".slider");
+
+group.addEventListener("click", () => {
+slider.classList.add("moveslider_group");
+slider.classList.remove("moveslider_pdf");
+slider.classList.remove("moveslider_chat");
+slider.classList.remove("moveslider_user_list");
+slider.classList.remove("moveslider_zoom");
+});
+
+pdf.addEventListener("click", () => {
+slider.classList.remove("moveslider_group");
+slider.classList.add("moveslider_pdf");
+slider.classList.remove("moveslider_chat");
+slider.classList.remove("moveslider_user_list");
+slider.classList.remove("moveslider_zoom");
+});
+chat.addEventListener("click", () => {
+slider.classList.remove("moveslider_group");
+slider.classList.remove("moveslider_pdf");
+slider.classList.add("moveslider_chat");
+slider.classList.remove("moveslider_user_list");
+slider.classList.remove("moveslider_zoom");
+});
+user_list.addEventListener("click", () => {
+slider.classList.remove("moveslider_group");
+slider.classList.remove("moveslider_pdf");
+slider.classList.remove("moveslider_chat");
+slider.classList.add("moveslider_user_list");
+slider.classList.remove("moveslider_zoom");
+});
+zoom.addEventListener("click", () => {
+slider.classList.remove("moveslider_group");
+slider.classList.remove("moveslider_pdf");
+slider.classList.remove("moveslider_chat");
+slider.classList.remove("moveslider_user_list");
+slider.classList.add("moveslider_zoom");
+});
+document.getElementById("defaultopen").click();
+</script>
+<!--chat js-->
+<script src="chat.js"></script>
+</body>
+</html>

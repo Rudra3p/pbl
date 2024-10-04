@@ -1,0 +1,25 @@
+.user_list_container_list{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+.user_list_container_list >div{
+    display: block;
+    margin: 0px 0px;
+    padding: 0px 0px;
+    background: #bdbdbd;
+    color: black;
+    height: 30px;
+    width: 70%;
+    border: none;
+}
+.user_list_container_list >div:hover{
+    cursor: pointer;
+    border: 1px solid black;
+}
+.user_list_container_list:active{
+    box-shadow: 2px 2px 2px 2px black;
+}
