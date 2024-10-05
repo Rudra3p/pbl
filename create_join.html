@@ -3,81 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="create_join_2.css">
     <title>Document</title>
-    <link rel="stylesheet" href="create_join.css">
 </head>
 <body>
     <header>
-        <h1>
-            VirtuaLearn
-        </h1>
+        <h1>VirtualLearn</h1>
     </header>
     <main>
-        <div>
-            
-        </div>
-        <div class="display" id="display">
-        <!--display div after create-->
-        </div>
-        
-            
-           
+        <nav>
+            <ul>
+                <li class="Home_nav" ><a href="#Home"id="defaultopen"><button>Home</button></a></li>
+                <li class="Calender_nav"><a href="#Calender"><button>Calender</button></a></li>                
+                <li class="Create"><a href="#Create_Group"><button>Create Group</button></a></li>
+                <li class="Join"><a href="#Join_Group"><button>Join Group</button></a></li>
+                <hr>
+                <li class="Help_nav"><a href="#Help"><button>Help</button></a></li>
+                <li class="Feed-Back_nav"><a href="#Feed-Back"><button>Feed-Back</button></a></li>
+            </ul>
+        </nav>
+        <article class="Home" id="Home">
+            <section class="display_groups">
+                Home
+            </section>
+                <button class="create_join_button" id="create_join_button">+</button>
+            <section class="create_join_display" id="create_join">
+               <a href="#Create_Group"><button>Create Group</button></a>
+               <a href="#Join_Group"><button>Join Group</button></a>
+            </section>
+        </article>
+        <article class="Calender" id="Calender">
+            <section>
+                Calender
+            </section>
+        </article>
+        <article class="Create_Group" id="Create_Group">
+            <section>
+                <form action="">
+                    <label for="Group-Name">Group-Name:</label>
+                    <input type="text" id="Group-Name" placeholder="Enter the group name" required>
+                    <label for="Leader-name">Leader-name:</label>
+                    <input type="text" id="Leader-name" placeholder="Enter your name" required>
+                    <button type="submit">Create</button>
+                </form>
+            </section>
+        </article>
+        <article class="Join_Group" id="Join_Group">
+            <section>
+                <form action="">
+                    <label for="Join_Group_name">Group-Name:</label>
+                    <input type="text" id="Join_Group_name" placeholder="Enter the group name" required>
+                    <label for="Group_code">Group-code:</label>
+                    <input type="number" id="Group-code" placeholder="Entre the group code" required>
+                </form>
+            </section>
+        </article>
+        <article class="Help" id="Help">
+            <section>
+                Help
+            </section>
+        </article>
+        <article class="Feed-Back" id="Feed-Back">
+            <section>
+                Feed-Back
+            </section>
+        </article>
     </main>
-    <footer> 
-        <div id="create_join" class="create_join">
-        <div class="create_form" id="create_form">
-                    <label for="group_name">group-name:</label>
-                    <input type="text" id="group_name" placeholder="enter your group name" required>
-                    <label for="leader_name">leader-name:</label>
-                    <input type="text" id="leader_name" placeholder="enter your name" required>
-                    <button id="create">create</button>
-        </div>
-        <div class="join_form" id="join_form">
-                    <label for="join_group">Group name</label>
-                    <input type="text" id="join_group" placeholder="Enter group name" required>
-                    <label for="join_code">join code</label>
-                    <input type="number" id="join_code" placeholder="Enter group code" required>
-                    <button id="join">join</button>
-        </div>
-        </div>
-            <div class="footer_icon-button_creat_join">
-                    <button id="circle-button">
-                            +
-                    </button>
-                </a>
-            </div>
-           
+    <footer>
+        <p>&COPY;VirtualLearn</p>
     </footer>
     <script>
-        /*for display text and div*/
-        const input1=document.getElementById('group_name')
-        const input2=document.getElementById('leader_name')
-        const button=document.getElementById('create')
-        const display=document.getElementById('display')
-        button.addEventListener('click',()=>{
-            display.innerHTML=`
-            <div class="display_div">
-            <a href="homepage.html">
-            <button>
-            <h1>${input1.value}</h1>
-            <p>${input2.value}</p>
-            </button>
-            </a>
-            </div>
-            `
-        });
-        
-        /*button creat join*/
-        const circle_button = document.getElementById('circle-button');
-        const hiddenDiv = document.getElementById('create_join');
+    /*for navigation bar*/
+    document.getElementById("defaultopen").click();
+    
+    /*for circle "+" button in Home*/
+    const circle_button = document.getElementById('create_join_button');
+    const hidden_create_join_buttons = document.getElementById('create_join_display');
 
-        circle_button.addEventListener('click', () => {
-      if (circle_button.classList.contains('rotated')) {
-        circle_button.classList.remove('rotated');
-        hiddenDiv.classList.remove('show');
+    circle_button.addEventListener('click', () => {
+      if (create_join_button.classList.contains('rotated_create_join_button')) {
+        create_join_button.classList.remove('rotated_create_join_button');
+        create_join_display.classList.remove('show_create_join_buttons');
     } else {
-        circle_button.classList.add('rotated');
-        hiddenDiv.classList.add('show');
+        circle_button.classList.add('rotated_create_join_button');
+        create_join_display.classList.add('show_create_join_buttons');
     }
     });
     </script>
