@@ -1,147 +1,132 @@
 *{
-    padding: 0px;
     margin: 0px;
-}
-body{
-    background-color: rgba(255, 255, 255, 0.753);
+    padding: 0px;;
 }
 header{
-    color: orange;
+    height: inherit;
+    width: 100vw;
     text-align: center;
 }
+header h1{
+    text-decoration: underline;
+    font-weight: bolder;
+    color: rgb(255, 149, 0);
+}
+
 /*main*/
+
 main{
-   background: transparent;
-   padding: 10px;
-   height: inherit;
-   margin-bottom: 50px;
-   display: grid;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 90vh;
 }
-.display{
-	display: inline-block;
-	position: relative;
-    border: 2px solid red;
-	height: inherit;
-	width: 65%;
-	left: 30%;
+
+/*main nav*/
+
+nav{
+    
+    height: 100%;
+    width: 25%;
+    border-right: 2px solid black;
 }
-/*footer*/
-footer{
+nav ul{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
-    background:linear-gradient(rgba(255, 255, 255, 0),rgba(164, 164, 164, 0.5));    
-    color: #111111;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
+    height: 90%;
     width: 100%;
-    height: inherit;
+    padding-top: 50px;
 }
-/*footer icon*/
-/*circle button*/
-#circle-button {
+nav ul li{
+    height: 30px;
+    width: 100%;
+    list-style: none;
+    text-align: center;
+    padding: 1px;
+    margin: 10px;
+    transition: all 0.5s ease-in-out;
+    
+}
+nav ul li button{
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    &:hover{
+        background: #a2a2a2;
+    }
+}
+nav ul hr{
+    width: 85%;
+}
 
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-	background-color: #e89003;
-	border: none;
-	color: #fff;
-	cursor: pointer;
-	outline: none;
-	font-size: 30px;
+/*main's articals*/
+
+main article{
+    display: none;
+    width: 75%;
+    height: 100%;
+    &:target{
+        display: block;
+    }
 }
 
-#circle-button {
-	font-size: 24px;
-	line-height: 40px;
-	text-align: center;
+/*Create join "+" button*/
+.create_join_button{
+    position: fixed;
+    left: 1100px;
+    top: 480px;
+    height: 45px;
+    width: 45px;
+    background: #ffffff;
+    border-radius: 45px;
+    border: none;
+    box-shadow: 2px 2px 10px black;
+    font-size: 31px;
+    color: orange;
+    &:hover{
+        background: #e4e4e4d6;
+    }
 }
-#circle-button.rotated {
-  transform: rotate(45deg);
+.rotated_create_join_button{
+    transform: rotate(45deg);
+    position: fixed;
+    left: 1100px;
+    top: 480px;
+    height: 45px;
+    width: 45px;
+    background: #ffffff;
+    border-radius: 45px;
+    border: none;
+    box-shadow: 2px 2px 10px black;
+    font-size: 31px;
+    color: orange;
+    cursor: pointer;
+    &:hover{
+        background: #e4e4e4d6;
+    }
 }
-.create_join{
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	transform: translateX(-50%);
-	background-color: rgba(58, 58, 58, 0.5);
-	padding: 10px;
-	border: 1px solid #ddd;
-	display: none;
-}
-.create_join.show {
 
-	backdrop-filter: blur(5px);
-	display: flex;
-	flex-wrap: nowrap;
-	justify-content: space-around;
-	align-items: stretch;
-	height: 385px;
-	width: 665px;
-	animation: slide-up 1.5s forwards;
-}
-.create_join input{
-	margin: 10px 5px;
-	width: 250px;
-	height: 35px;
-	background: #d4d4d4b0;
+/*create and join button in home after click "+" button*/
+
+.create_join_display{
+    position: fixed;
+	background-color: rgb(255, 255, 255);
 	border: none;
-	border-radius: 20px;
-	text-align: center;
-	color: #0e0e0e;
+    display: none;
 }
-.create_join input::placeholder{
-	color: rgb(15, 15, 15);
+.show_create_join_buttons{
+    display: contents;
 }
-.create_join button{
-	margin: 20px 5px;
-	height: 35px;
-	width: 250px;
-	background: linear-gradient(to right,
-	rgb(255, 195, 110),
-	rgb(255, 146, 91));
-	border: none;
-	border-radius: 30px;
-}
-.create_join div{
-	height: 100%;
-	width: 45%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-.display_div{
-	display: inline-block;
-	width: 100%;
-	margin: 10px 0px;
-}
-.display_div button{
-	border: 0.5px solid black;
-	border-radius: 15px;
-	cursor: pointer;
-	height: 135px;
-	width: 100%;
-	background: #82828296;
-}
-.display_div button h1{
-	margin: -11px 24px;
-	font-size: 28px;
-	text-align: start;
-}
-.display_div button p{
-	margin: 19px 25px;
-	font-size: 14px;
-	text-align: start;
-}
-@keyframes slide-up {
-	0% {
-		transform: translateX(-50%) translateY(300px);
-	}
-	100% {
-		transform: translateX(-50%) translateY(0);
-	}
+/*footer*/
+
+footer{
+    width: 100vw;
+    height: 7%;
+    border-top: 0.3px solid rgba(30, 30, 30, 0.34);
+    font-weight: bold;
+    text-align: end;
 }
