@@ -3,45 +3,33 @@
     padding: 0px;;
 }
 header{
-    height: inherit;
+    height: 15vh;
     width: 100vw;
     text-align: center;
+    background: #333;
 }
 header h1{
     text-decoration: underline;
     font-weight: bolder;
-    color: rgb(255, 149, 0);
+    color: rgb(255, 255, 255);
 }
-
-/*main*/
-
-main{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 90vh;
-}
-
-/*main nav*/
-
 nav{
-    
-    height: 100%;
-    width: 25%;
+    height: 6vh;
+    width: 100%;
     border-right: 2px solid black;
 }
 nav ul{
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
-    height: 90%;
+    justify-content: center;
+    flex-direction: row; 
+    height: 100%;
     width: 100%;
-    padding-top: 50px;
+    padding-left: 50px;
 }
 nav ul li{
     height: 30px;
-    width: 100%;
+    width: 100px;
     list-style: none;
     text-align: center;
     padding: 1px;
@@ -55,27 +43,42 @@ nav ul li button{
     background: transparent;
     border: none;
     cursor: pointer;
+    font-weight: bolder;
+    font-size: 15px;
+    color: white;
     &:hover{
-        background: #a2a2a2;
+        text-decoration: underline;
     }
 }
-nav ul hr{
-    width: 85%;
+hr{
+    left: 7%;
+    width: 86%;
+}
+
+/*main*/
+
+main{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 80vh;
 }
 
 /*main's articals*/
 
 main article{
     display: none;
-    width: 75%;
+    width: 100%;
     height: 100%;
     &:target{
         display: block;
     }
 }
+/*Home*/
 
 /*Create join "+" button*/
 .create_join_button{
+    z-index: 2;
     position: fixed;
     left: 1100px;
     top: 480px;
@@ -92,6 +95,7 @@ main article{
     }
 }
 .rotated_create_join_button{
+    z-index: 2;
     transform: rotate(45deg);
     position: fixed;
     left: 1100px;
@@ -113,14 +117,141 @@ main article{
 /*create and join button in home after click "+" button*/
 
 .create_join_display{
-    position: fixed;
-	background-color: rgb(255, 255, 255);
-	border: none;
     display: none;
+    
 }
 .show_create_join_buttons{
-    display: contents;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    position: fixed;
+    top: 485px;
+    width: 100%;
+	background-color: rgb(255, 255, 255);
+	border: none;
+	animation: slide-up 1s forwards;
 }
+@keyframes slide-up{
+    0%{
+        transform: translateY(50px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+.show_create_join_buttons button{
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bolder;
+    border: none;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+.Create_Group_Button_Home{
+    background: linear-gradient(to right,
+    rgb(255, 195, 110),
+    rgb(255, 146, 91));
+    color: rgb(231, 231, 231);
+}
+.Join_Group_Button_Home{
+    background: rgb(231, 231, 231);
+    color: rgb(240, 136, 9);
+}
+
+/*Create group artical*/
+
+.Create_Group section{
+    height: 100%;
+    width: 100%;
+    background: #ffffff;
+}
+.Create_Group section form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background: #ffffff;
+}
+.Create_Group section form input{
+    margin-bottom: 20px;
+    height: 40px;
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 15px;
+    &::placeholder{
+        font-size: 15px;
+    }
+}
+
+/*Join group artical*/
+
+.Join_Group section{
+    height: 100%;
+    width: 100%;
+    background: #ffffff;
+}
+.Join_Group section form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background: #ffffff;
+}
+.Join_Group section form input{
+    margin-bottom: 20px;
+    height: 40px;
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 15px;
+    &::placeholder{
+        font-size: 15px;
+    }
+}
+
+/*create join button styles*/
+
+.create_join_submit_button{
+    height: 40px;
+    width: 300px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(to right,
+    rgb(255, 195, 110),
+    rgb(255, 146, 91));
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    &:hover{
+    background: linear-gradient(to right,
+    rgb(216, 165, 93),
+    rgb(203, 116, 72));
+    }
+}
+.reset_button{
+    margin-top: 20px;
+    background: #b2b2b2;
+    color: #000;
+    height: 40px;
+    width: 300px;
+    border: none;
+    border-radius: 50px;
+    font-size: 15px;
+    cursor: pointer;
+    &:hover{
+        background: #8a8a8a;
+    }
+}
+
 /*footer*/
 
 footer{
