@@ -14,6 +14,8 @@ header h1{
     color: rgb(255, 255, 255);
 }
 nav{
+    display: flex;
+    flex-direction: row;
     height: 6vh;
     width: 100%;
     border-right: 2px solid black;
@@ -24,8 +26,9 @@ nav ul{
     justify-content: center;
     flex-direction: row; 
     height: 100%;
-    width: 100%;
+    width: 95%;
     padding-left: 50px;
+    font-size: 15px;
 }
 nav ul li{
     height: 30px;
@@ -63,7 +66,12 @@ main{
     width: 100vw;
     height: 80vh;
 }
-
+.More{
+    display: none;
+    &:target{
+        display: block;
+    }
+}
 /*main's articals*/
 
 main article{
@@ -75,6 +83,29 @@ main article{
     }
 }
 /*Home*/
+.display_div{
+	display: inline-block;
+	width: 100%;
+	margin: 10px 0px;
+}
+.display_div button{
+	border: 0.5px solid black;
+	border-radius: 15px;
+	cursor: pointer;
+	height: 135px;
+	width: 100%;
+	background: #82828296;
+}
+.display_div button h1{
+	margin: -11px 24px;
+	font-size: 28px;
+	text-align: start;
+}
+.display_div button p{
+	margin: 19px 25px;
+	font-size: 14px;
+	text-align: start;
+}
 
 /*Create join "+" button*/
 .create_join_button{
@@ -147,6 +178,7 @@ main article{
     font-size: 15px;
     font-weight: bolder;
     border: none;
+    cursor: pointer;
     &:hover{
         text-decoration: underline;
     }
@@ -156,20 +188,23 @@ main article{
     rgb(255, 195, 110),
     rgb(255, 146, 91));
     color: rgb(231, 231, 231);
+    cursor: pointer;
 }
 .Join_Group_Button_Home{
     background: rgb(231, 231, 231);
     color: rgb(240, 136, 9);
+    cursor: pointer;
 }
 
-/*Create group artical*/
+/*Create group section*/
 
-.Create_Group section{
+.Create_Group{
+    display: none;
     height: 100%;
     width: 100%;
     background: #ffffff;
 }
-.Create_Group section form{
+.Create_Group form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -178,7 +213,7 @@ main article{
     width: 100%;
     background: #ffffff;
 }
-.Create_Group section form input{
+.Create_Group form input{
     margin-bottom: 20px;
     height: 40px;
     width: 300px;
@@ -190,14 +225,19 @@ main article{
     }
 }
 
-/*Join group artical*/
+.Create_form_display{
+	display: flex;
+}
 
-.Join_Group section{
+/*Join group section*/
+
+.Join_Group {
+    display: none;
     height: 100%;
     width: 100%;
     background: #ffffff;
 }
-.Join_Group section form{
+.Join_Group form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -206,7 +246,7 @@ main article{
     width: 100%;
     background: #ffffff;
 }
-.Join_Group section form input{
+.Join_Group form input{
     margin-bottom: 20px;
     height: 40px;
     width: 300px;
@@ -217,6 +257,12 @@ main article{
         font-size: 15px;
     }
 }
+
+.Join_form_display{
+    display: flex;
+}
+
+
 
 /*create join button styles*/
 
