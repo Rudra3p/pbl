@@ -17,6 +17,7 @@ body {
     flex-direction: column;
     gap: 30px;
     background-color: rgba(238, 238, 238, 0.753);
+    background-image: url("");
 }
 /*main container*/
 
@@ -33,7 +34,7 @@ header {
 }
 .heading_div{
     height: 39px;
-    width: 196px;
+    width: 177px;
     overflow: hidden;
     border-bottom: 1px solid orange;
 }
@@ -60,8 +61,10 @@ main{
     padding: 50px;
     height: 90vh;
     width: 99vw;
-    text-align: center;
     font-weight: bold;
+}
+.landingpage h3{
+    text-align: center;
 }
 .landingpage button{
     height: 30px;
@@ -110,7 +113,7 @@ main{
     height: 60%;
     color: rgb(15, 15, 15);
 }
-h2{
+.form-container h2{
     font-weight: bold; 
     text-decoration: underline;   
 }
