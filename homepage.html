@@ -1,172 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>VirtualLearn</title>
+    <link rel="stylesheet" href="rchat.css">
     <link rel="stylesheet" href="homepage.css">
-    <link rel="stylesheet" href="chat.css">
-    <link rel="stylesheet" href="user_list.css">
-    <link rel="stylesheet" href="zoom.css">
-    <link rel="stylesheet" href="pdf.css">
+    <link rel="stylesheet" href="clock.css">
+    <link rel="stylesheet" href="quick.css">
 </head>
+
 <body>
     <header>
-        <h1>VirtuaLearn</h1>
-    </header>
-   <div class="main_nav">
-    <nav>
+        <h1 id="title_head">VirtualLearn</h1>
+        <nav>
             <ul>
-                <li>
-                    <abbr title="send message in group">
-                    <a href="#group_main">
-                        <button class="group" id="defaultopen">group</button>
-                    </a>
-                    </abbr>
-                </li>
-                <li>
-                    <abbr title="show pdf">
-                    <a href="#pdf_main">
-                        <button class="pdf">pdf</button>
-                    </a>
-                    </abbr>
-                </li>
-                <li>
-                    <abbr title="chat with group members">
-                    <a href="#chat_main">
-                        <button class="chat">chat</button>
-                    </a>
-                    </abbr>
-                </li>
-                <li>
-                    <abbr title="zoom meeting">
-                    <a href="#zoom_main">
-                        <button class="zoom">zoom</button>
-                    </a>
-                    </abbr>
-                </li>
-                <li>
-                    <abbr title="list of user">
-                    <a href="#user_list_main">
-                        <button class="user_list">user</button>
-                    </a>
-                </abbr>
-                </li>
-                
+                <li><a class="def_navbar" href="#" onclick="showPage('stream')" id="defaultopen">Stream</a></li>
+                <li><a class="def_navbar" href="#" onclick="showPage('messaging')">Messaging</a></li>
+                <li><a class="def_navbar" href="#" onclick="showPage('pdf')">PDF Section</a></li>
+                <li><a class="def_navbar" href="#" onclick="showPage('notes')">Notes</a></li>
+                <li><a class="def_navbar" href="#" onclick="showPage('quiz')">Quiz Section</a></li>
             </ul>
-            <div class="slider">
+        </nav>
+    </header>
 
-            </div>
-    </nav>
     <main>
-        <article class="group_main" id="group_main">
-            <!--group-->
-            group Lorem, ipsum dolor.
-        </article>
-        <article class="pdf_main" id="pdf_main">
-            <!--pdf-->
-            <section class="pdf_container_pdf">
-                <input type="file">
-                <button class="add_pdf">add PDF</button>
-            </section>
-        </article>
-        <article class="chat_main" id="chat_main">
-            <!--chat-->      
-                <section class="main_userlist_chat">
-        <input id="username_input_chat" type="search" list="user_datalist_chat" placeholder="Enter username">
-        <div class="user_list_container_chat">
-            <datalist id="user_datalist_chat">
-                <option value="Rudra"></option>
-                <option value="Ved"></option>
-                <option value="Abhi"></option>
-                <option value="Akshar"></option>
-            </datalist>
+        <!-- Clock Section -->
+        <div class="clock">
+            <span id="hrs">00</span>
+            <span>:</span>
+            <span id="min">00</span>
+            <span>:</span>
+            <span id="sec">00</span>
         </div>
-                </section>
-                <section class="chating_container_chat">
-                    <div class="show_container_chat" id="show_container_chat">
+
+        <div id="stream" class="page">
+            group_messages_display here
+        </div>
+
+        <!-- PDF Section -->
+        <div id="pdf" class="page" style="display: none;">
+            <div class="container">
+                <h1>PDF Section</h1>
+
+                <!-- PDF Viewer -->
+                <div id="pdfViewer" style="border: 1px solid #ccc; width: 100%; height: 500px; margin-bottom: 20px; display: none;">
+                    <iframe id="pdfIframe" style="width: 100%; height: 100%;"></iframe>
+                </div>
+
+                <!-- PDF Upload Form -->
+                <div id="pdfUploadForm" style="display: none;">
+                    <h2>Upload a PDF</h2>
+                    <form id="pdfUpload" method="post" enctype="multipart/form-data">
+                        <label for="pdfTitle">PDF Title:</label>
+                        <input type="text" id="pdfTitle" name="pdfTitle" required>
+                        <label for="pdf">Select PDF:</label>
+                        <input type="file" id="pdf" name="pdf" accept="application/pdf" required>
+                        <button type="submit">Upload PDF</button>
+                    </form>
+                </div>
+                
+                <h2>Available PDFs</h2>
+                <div id="pdfListContainer"></div>
+            </div>
+        </div>
+        <div id="notes" class="page" style="display: none;">Notes</div>
+        <div id="messaging" class="page" style="display: none;">
+            <!-- <h2>Messaging</h2>
+            <p>Hello from the Messaging page!</p> -->
+            <div class="app-container">
+                <!-- Sidebar for contacts -->
+                <div class="sidebar">
+                    <ul class="contacts">
+                        <li class="contact active">
+                            <div class="contact-info">
+                                <div class="contact-details">
+                                    <span class="contact-name">ved</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                
+                <div class="chat-section">
+                    <div class="chat-header">
+                        <div class="chat-details">
+                            <!-- <h3>ved</h3> -->
+                        </div>
+                        <div class="header-actions">
+                            <button class="settings-button">⋮</button>
+                        </div>
                     </div>
-                    <div class="input_send_container_chat">
-                        <input class="input_chat" id="input_chat" rows="33" cols="33" type="text" aria-placeholder="Enter message..."></div>
-                        <button class="send_chat" id="send_chat">
-                            <img src="sendbutton.png" alt="">
-                            <abbr title="send"></abbr>
-                        </button>
-                </section>       
-        </article>
-        <article class="zoom_main" id="zoom_main">
-            <!--zoom meeting-->
-            <a href="zoom.com">
-                <button>host meeting</button>
-            </a>
-        </article>
-        <article class="user_list_main" id="user_list_main">
-            <!--list of user-->
-            <section class="user_list_container_list" id="user_list_container_list">
-                <div>rudra</div>
-                <div>ved</div>
-                <div>abhi</div>
-                <div>Akshar</div>
-            </section>
-        </article>
-        
+                    <hr>
+                    <div id="message-container" class="messages"></div>
+
+                    <div class="chat-input">
+                        <input type="text" id="message-input" placeholder="Type a message...">
+                        <button id="send-button"><img src="send.jpg" alt=""></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="quiz" class="page" style="display: none;">
+            <div class="container">
+                <h1>Create a Quiz</h1>
+                <form id="createQuizForm">
+                    <label for="quizTitle">Quiz Title:</label>
+                    <input type="text" id="quizTitle" name="quizTitle" required>
+                    <div id="questionsContainer"></div>
+                    <button type="button" id="addQuestionBtn">Add Question</button>
+                    <button type="submit">Create Quiz</button>
+                </form>
+
+                <h1>Take a Quiz</h1>
+                <div id="takeQuizContainer"></div>
+                <button id="submitQuizBtn" style="display:none;">Submit Quiz</button>
+                <div id="quizResult"></div>
+            </div>
+        </div>
     </main>
-    </div>
-    <footer>
 
-    </footer>
+    <!-- Plus Button for Uploading PDF -->
+    <button id="uploadPdfBtn">+</button>
+    <script src="chat.js"></script>
+    <script src="clock.js"></script>
+    <script src="quick.js"></script>
+    <script src="rchat.js"></script>
     <script>
-        /*let slider*/
-let group = document.querySelector(".group");
-let pdf = document.querySelector(".pdf");
-let chat = document.querySelector(".chat");
-let user_list = document.querySelector(".user_list");
-let zoom = document.querySelector(".zoom");
-/*let main*/
-let group_main= document.querySelector(".group_main")
-/*slider*/
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.style.display = 'none';
+            });
+    
+            document.getElementById(pageId).style.display = 'block';
+            const uploadBtn = document.getElementById('uploadPdfBtn');
+    
+            // Show the upload button only in the PDF section
+            if (pageId === 'pdf') {
+                uploadBtn.style.display = 'block';
+            } else {
+                uploadBtn.style.display = 'none';
+                document.getElementById('pdfUploadForm').style.display = 'none'; // Hide upload form when leaving PDF section
+            }
+        }
+    
+        showPage('home'); // Set default page as 'home'
+    
+        // Toggle PDF Upload Form when clicking the + button
+        const uploadBtn = document.getElementById('uploadPdfBtn');
+        const uploadForm = document.getElementById('pdfUploadForm');
+        const pdfViewer = document.getElementById('pdfViewer');
+    
+        uploadBtn.addEventListener('click', () => {
+            if (uploadForm.style.display === 'none' || uploadForm.style.display === '') {
+                uploadForm.style.display = 'block';
+            } else {
+                uploadForm.style.display = 'none';
+            }
+        });
+    
+        const pdfListContainer = document.getElementById('pdfListContainer');
+    
+        function loadPdf(pdfUrl) {
+            const iframe = document.getElementById('pdfIframe');
+            pdfViewer.style.display = 'block';
+            iframe.src = pdfUrl;
+        }
+    
+        const availablePdfs = [
+            { title: "Example PDF 1", url: "example1.pdf" },
+            { title: "Example PDF 2", url: "example2.pdf" }
+        ];
+    
+        availablePdfs.forEach(pdf => {
+            const pdfItem = document.createElement('div');
+            pdfItem.innerHTML = `<a href="#" onclick="loadPdf('${pdf.url}')">${pdf.title}</a>`;
+            pdfListContainer.appendChild(pdfItem);
+        });
+    </script>
+    
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script>
+        const socket = io();
+        const chatbox = document.getElementById('chatbox');
+        const messageInput = document.getElementById('messageInput');
+        const sendButton = document.getElementById('sendButton');
+        const usernameInput = document.getElementById('username');
 
-let slider = document.querySelector(".slider");
+        function displayMessage(username, message) {
+            const messageDiv = document.createElement('div');
+            messageDiv.innerText = username + ": " + message;
+            chatbox.appendChild(messageDiv);
+            chatbox.scrollTop = chatbox.scrollHeight; // Scroll to bottom
+        }
 
-group.addEventListener("click", () => {
-slider.classList.add("moveslider_group");
-slider.classList.remove("moveslider_pdf");
-slider.classList.remove("moveslider_chat");
-slider.classList.remove("moveslider_user_list");
-slider.classList.remove("moveslider_zoom");
-});
+        // When send button is clicked
+        sendButton.addEventListener('click', function () {
+            const message = messageInput.value;
+            const username = usernameInput.value;
+            if (message && username) {
+                displayMessage('You', message);
 
-pdf.addEventListener("click", () => {
-slider.classList.remove("moveslider_group");
-slider.classList.add("moveslider_pdf");
-slider.classList.remove("moveslider_chat");
-slider.classList.remove("moveslider_user_list");
-slider.classList.remove("moveslider_zoom");
-});
-chat.addEventListener("click", () => {
-slider.classList.remove("moveslider_group");
-slider.classList.remove("moveslider_pdf");
-slider.classList.add("moveslider_chat");
-slider.classList.remove("moveslider_user_list");
-slider.classList.remove("moveslider_zoom");
-});
-user_list.addEventListener("click", () => {
-slider.classList.remove("moveslider_group");
-slider.classList.remove("moveslider_pdf");
-slider.classList.remove("moveslider_chat");
-slider.classList.add("moveslider_user_list");
-slider.classList.remove("moveslider_zoom");
-});
-zoom.addEventListener("click", () => {
-slider.classList.remove("moveslider_group");
-slider.classList.remove("moveslider_pdf");
-slider.classList.remove("moveslider_chat");
-slider.classList.remove("moveslider_user_list");
-slider.classList.add("moveslider_zoom");
-});
-document.getElementById("defaultopen").click();
-</script>
-<!--chat js-->
-<script src="chat.js"></script>
+                // Send message to the server
+                socket.emit('message', { username: username, message: message });
+                messageInput.value = ''; // Clear input field
+            }
+        });
+
+        // Listen for messages from the server
+        socket.on('message', function (data) {
+            displayMessage(data.username, data.message);
+        });
+
+        // Join the chat room
+        socket.emit('join', { username: usernameInput.value });
+    </script>
 </body>
+
 </html>
