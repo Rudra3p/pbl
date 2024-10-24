@@ -1,114 +1,82 @@
 *{
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
-}
-header{
-    color: orange;
-    text-align: center;
-}
-body{
-    background: #ffffff;
-}
-
-    /*nav_main*/
-
-.main_nav{
-    display: flex;
-    flex-direction: row;
-    height:80vh;
+    padding: 0;
+    height: 100vh;
     width: 100vw;
 }
 
-    /*nav*/
-
-nav{
+header {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    background: #c5c5c55e;
-    height: 100%;
-    width: 25%;
-    border: none;
-    border-radius: 50px;
-    overflow: hidden;
+    flex-direction: row;
+    background: #000000;
+    color: white;
+    padding: 3px;
+    text-align: center;
+    height: 16%;
 }
-nav ul{
+#title_head{
+    padding-top: 26px;
+    padding-bottom: 2px;
+}
+nav{  
     position: relative;
+    height: 30%;
+    width: 60%;
+    top: 70%;
+    left: 38%;
+    width: 44%;
+    background: linear-gradient(to right,#000,#222222 );
 }
-nav ul li{
-    margin: 10px 0px;
-    list-style: none;
+nav ul {
+    list-style-type: none;
+    padding: 0;
 }
-nav ul li button{
-    height: 30px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
 }
-.slider{
-    margin: 28px 0px 0px;
-    height: 3px;
-    width: 50px;
-    border-radius: 50px;
-    background: linear-gradient(to right,
-            rgb(255, 195, 110),
-            rgb(255, 146, 91));
-    position: absolute;
-    left: 21px;
-    transition: all 0.5s ease-in-out;
-}
-.moveslider_group{
-    width: 50px;
-    left: 21px;
-}
-.moveslider_pdf{
-    width: 45px;
-    left: 111px;
-}
-.moveslider_chat{
-    width: 47px;
-    left: 192px;
-}
-.moveslider_user_list{
-    width: 48px;
-    left: 369px;
-}
-.moveslider_zoom{
-    width: 48px;
-    left: 279px;
-}
-abbr{
+
+nav ul li a {
+    color: white;
     text-decoration: none;
+    transition: all 0.7s linear;
+    &:hover{
+        text-decoration: underline;
+    }
 }
-  /*main*/
+
+.page {
+    height: 97%;
+    width: 100%;
+}
 
 main{
-    padding-top: 25px;
-    width: 75%;
-    height: 100%;
-    overflow: hidden;
-}
-main >article{
-    height: inherit;
-    
+    height: 84%;
     width: 100%;
+    z-index: 1;
+}
+#uploadPdfBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 36px;
+    width: 63px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: orange;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 1000; 
+    margin-top: 39%;
     display: none;
 }
-.group_main:target,  .pdf_main:target, .user_list_main:target, .zoom_main:target{
-    display: block
-    ;
-    
-}
-.chat_main:target{
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    left: 100px;
-    height: 100%;
-    width: 100vw;
-    background: #eaeaea;
-}
-/*footer*/
-footer{
-    height: 3vh;
+#pdfUploadForm {
+    margin-top: 20px;
 }
