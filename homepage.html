@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="homepage.css">
     <link rel="stylesheet" href="clock.css">
     <link rel="stylesheet" href="quick.css">
+    <link rel="stylesheet" href="notes.css">
 </head>
 
 <body>
@@ -65,7 +66,13 @@
                 <div id="pdfListContainer"></div>
             </div>
         </div>
-        <div id="notes" class="page" style="display: none;">Notes</div>
+        <div id="notes" class="page" style="display: none;">
+                <h2>Notes</h2>
+                <textarea id="note-textarea" placeholder="Type your notes here..."></textarea>
+                <button id="save-note-btn">Save Note</button>
+                <button id="clear-note-btn">Clear Notes</button>
+                <div id="note-list"></div>
+        </div>
         <div id="messaging" class="page" style="display: none;">
             <!-- <h2>Messaging</h2>
             <p>Hello from the Messaging page!</p> -->
@@ -98,7 +105,7 @@
 
                     <div class="chat-input">
                         <input type="text" id="message-input" placeholder="Type a message...">
-                        <button id="send-button"><img src="send.jpg" alt=""></button>
+                        <button id="send-button"><img src="sendbutton.png" alt=""></button>
                     </div>
                 </div>
             </div>
@@ -126,6 +133,7 @@
     <button id="uploadPdfBtn">+</button>
     <script src="chat.js"></script>
     <script src="clock.js"></script>
+    <script src="notes.js"></script>
     <script src="quick.js"></script>
     <script src="rchat.js"></script>
     <script>
