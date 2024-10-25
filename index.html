@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VirtualLearn</title>
     <link rel="stylesheet" href="rchat.css">
-    <link rel="stylesheet" href="style1.css">
-    <!-- <link rel="stylesheet" href="clock.css">
-    <link rel="stylesheet" href="quick.css">  -->
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="clock.css">
+    <link rel="stylesheet" href="quick.css">
+    <link rel="stylesheet" href="notes.css">
 </head>
 
 <body>
@@ -16,16 +17,17 @@
         <h1 id="title_head">VirtualLearn</h1>
         <nav>
             <ul>
-                <li><a class="def_navbar" href="#" onclick="showPage('home')">Home</a></li>
+                <li><a class="def_navbar" href="#" onclick="showPage('stream')" id="defaultopen">Stream</a></li>
                 <li><a class="def_navbar" href="#" onclick="showPage('messaging')">Messaging</a></li>
                 <li><a class="def_navbar" href="#" onclick="showPage('pdf')">PDF Section</a></li>
+                <li><a class="def_navbar" href="#" onclick="showPage('notes')">Notes</a></li>
                 <li><a class="def_navbar" href="#" onclick="showPage('quiz')">Quiz Section</a></li>
             </ul>
         </nav>
     </header>
 
-
     <main>
+        <!-- Clock Section -->
         <div class="clock">
             <span id="hrs">00</span>
             <span>:</span>
@@ -34,56 +36,80 @@
             <span id="sec">00</span>
         </div>
 
-        <div id="home" class="page">
-            <h2>Home</h2>
-            <p>I am on the Home page.</p>
+        <div id="stream" class="page">
+            group_messages_display here
         </div>
-        <!-- ! messaging section -->
+
+        <!-- PDF Section -->
+        <div id="pdf" class="page" style="display: none;">
+            <div class="container">
+                <h1>PDF Section</h1>
+
+                <!-- PDF Viewer -->
+                <div id="pdfViewer" style="border: 1px solid #ccc; width: 100%; height: 500px; margin-bottom: 20px; display: none;">
+                    <iframe id="pdfIframe" style="width: 100%; height: 100%;"></iframe>
+                </div>
+
+                <!-- PDF Upload Form -->
+                <div id="pdfUploadForm" style="display: none;">
+                    <h2>Upload a PDF</h2>
+                    <form id="pdfUpload" method="post" enctype="multipart/form-data">
+                        <label for="pdfTitle">PDF Title:</label>
+                        <input type="text" id="pdfTitle" name="pdfTitle" required>
+                        <label for="pdf">Select PDF:</label>
+                        <input type="file" id="pdf" name="pdf" accept="application/pdf" required>
+                        <button type="submit">Upload PDF</button>
+                    </form>
+                </div>
+                
+                <h2>Available PDFs</h2>
+                <div id="pdfListContainer"></div>
+            </div>
+        </div>
+        <div id="notes" class="page" style="display: none;">
+                <h2>Notes</h2>
+                <textarea id="note-textarea" placeholder="Type your notes here..."></textarea>
+                <button id="save-note-btn">Save Note</button>
+                <button id="clear-note-btn">Clear Notes</button>
+                <div id="note-list"></div>
+        </div>
         <div id="messaging" class="page" style="display: none;">
             <!-- <h2>Messaging</h2>
             <p>Hello from the Messaging page!</p> -->
-                <div class="app-container">
-                    <!-- Sidebar for contacts -->
-                    <div class="sidebar">
-                        <ul class="contacts">
-                            <li class="contact active">
-                                <div class="contact-info">
-                                    <div class="contact-details">
-                                        <span class="contact-name">ved</span>
-                                        <span class="last-message">Hey, how are you?</span>
-                                    </div>
+            <div class="app-container">
+                <!-- Sidebar for contacts -->
+                <div class="sidebar">
+                    <ul class="contacts">
+                        <li class="contact active">
+                            <div class="contact-info">
+                                <div class="contact-details">
+                                    <span class="contact-name">ved</span>
                                 </div>
-                            </li>
-                        </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                
+                <div class="chat-section">
+                    <div class="chat-header">
+                        <div class="chat-details">
+                            <!-- <h3>ved</h3> -->
+                        </div>
+                        <div class="header-actions">
+                            <button class="settings-button">⋮</button>
+                        </div>
                     </div>
+                    <hr>
+                    <div id="message-container" class="messages"></div>
 
-                    <!-- Chat window -->
-                    <div class="chat-section">
-                        <div class="chat-header">
-                            <div class="chat-details">
-                                <h3>John Doe</h3>
-                                <span>Last seen today at 2:00 PM</span>
-                            </div>
-                            <div class="header-actions">
-                                <button class="settings-button">⋮</button>
-                            </div>
-                        </div>
-                        <hr>
-                        <div id="message-container" class="messages"></div>
-
-                        <div class="chat-input">
-                            <input type="text" id="message-input" placeholder="Type a message...">
-                            <button id="send-button"><img src="sendbtn.jpg" alt=""></button>
-                        </div>
+                    <div class="chat-input">
+                        <input type="text" id="message-input" placeholder="Type a message...">
+                        <button id="send-button"><img src="sendbutton.png" alt=""></button>
                     </div>
                 </div>
+            </div>
         </div>
-        <!-- !PDF section -->
-        <div id="pdf" class="page" style="display: none;">
-            <h2>PDF Section</h2>
-            <p>I am in the PDF Section.</p>
-        </div>
-
         <div id="quiz" class="page" style="display: none;">
             <div class="container">
                 <h1>Create a Quiz</h1>
@@ -102,28 +128,68 @@
             </div>
         </div>
     </main>
-    <!-- <script src="rchat.js"></script> -->
+
+    <!-- Plus Button for Uploading PDF -->
+    <button id="uploadPdfBtn">+</button>
     <script src="chat.js"></script>
     <script src="clock.js"></script>
+    <script src="notes.js"></script>
     <script src="quick.js"></script>
     <script src="rchat.js"></script>
     <script>
-
         function showPage(pageId) {
-            // Hide all pages
             const pages = document.querySelectorAll('.page');
             pages.forEach(page => {
                 page.style.display = 'none';
             });
-
-            // Show the selected page
+    
             document.getElementById(pageId).style.display = 'block';
+            const uploadBtn = document.getElementById('uploadPdfBtn');
+    
+            // Show the upload button only in the PDF section
+            if (pageId === 'pdf') {
+                uploadBtn.style.display = 'block';
+            } else {
+                uploadBtn.style.display = 'none';
+                document.getElementById('pdfUploadForm').style.display = 'none'; // Hide upload form when leaving PDF section
+            }
         }
-
-        // Show the home page by default
-        showPage('home');
+    
+        showPage('home'); // Set default page as 'home'
+    
+        // Toggle PDF Upload Form when clicking the + button
+        const uploadBtn = document.getElementById('uploadPdfBtn');
+        const uploadForm = document.getElementById('pdfUploadForm');
+        const pdfViewer = document.getElementById('pdfViewer');
+    
+        uploadBtn.addEventListener('click', () => {
+            if (uploadForm.style.display === 'none' || uploadForm.style.display === '') {
+                uploadForm.style.display = 'block';
+            } else {
+                uploadForm.style.display = 'none';
+            }
+        });
+    
+        const pdfListContainer = document.getElementById('pdfListContainer');
+    
+        function loadPdf(pdfUrl) {
+            const iframe = document.getElementById('pdfIframe');
+            pdfViewer.style.display = 'block';
+            iframe.src = pdfUrl;
+        }
+    
+        const availablePdfs = [
+            { title: "Example PDF 1", url: "example1.pdf" },
+            { title: "Example PDF 2", url: "example2.pdf" }
+        ];
+    
+        availablePdfs.forEach(pdf => {
+            const pdfItem = document.createElement('div');
+            pdfItem.innerHTML = `<a href="#" onclick="loadPdf('${pdf.url}')">${pdf.title}</a>`;
+            pdfListContainer.appendChild(pdfItem);
+        });
     </script>
-
+    
     <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
     <script>
         const socket = io();
